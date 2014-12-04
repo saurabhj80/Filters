@@ -62,26 +62,36 @@
     [alertView resignFirstResponder];
     
     if (buttonIndex == 1 && [[alertView textFieldAtIndex:0].text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]].length != 0) {
+        
+        Album* album = [self albumWithName:[alertView textFieldAtIndex:0].text];
      
-        id delegate = [[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext * context = [delegate managedObjectContext];
-        
-        Album* album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
-        
-        album.name = [alertView textFieldAtIndex:0].text;
-        album.date = [NSDate date];
-        
-        NSError* error = nil;
-        
-        if (![context save:&error]) {
-            
-            NSLog(@"%@", error);
-        }
-        
+        [self.albums addObject:album];
     }
     
 }
 
+#pragma mark - Helper method
+
+-(Album *)albumWithName:(NSString*)name
+{
+    id delegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext * context = [delegate managedObjectContext];
+    
+    Album* album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
+    
+    album.name = name;
+    album.date = [NSDate date];
+    
+    NSError* error = nil;
+    
+    if (![context save:&error]) {
+        
+        NSLog(@"%@", error);
+    }
+    
+    return album;
+    
+}
 
 #pragma mark - Table view data source
 
