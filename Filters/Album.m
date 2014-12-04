@@ -1,15 +1,17 @@
 //
-//  ViewController.h
+//  Album.m
 //  Filters
 //
 //  Created by Saurabh Jain on 12/3/14.
 //  Copyright (c) 2014 Saurabh jain. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Album.h"
 
-@interface ViewController : UIViewController
 
+@implementation Album
+
+@dynamic name;
+@dynamic date;
 
 @end
-
