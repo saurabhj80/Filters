@@ -7,6 +7,7 @@
 //
 
 #import "AlbumTableViewController.h"
+#import "CoreDataHelper.h"
 
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
@@ -14,6 +15,16 @@
 @end
 
 @implementation AlbumTableViewController
+
+-(NSMutableArray *)albums
+{
+    if (!_albums) {
+        
+        _albums = [[NSMutableArray alloc] init];
+    }
+    
+    return _albums;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,6 +54,32 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSManagedObjectContext* context = [CoreDataHelper managedObjectContext];
+     
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Album" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    self.albums = [fetchedObjects mutableCopy];
+    
+    if (fetchedObjects == nil) {
+        
+        NSLog(@"Nil");
+    }
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Alert
 
 - (IBAction)addAlbumBarButtonItemPressed:(UIBarButtonItem *)sender {
@@ -63,9 +100,9 @@
     
     if (buttonIndex == 1 && [[alertView textFieldAtIndex:0].text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]].length != 0) {
         
-        Album* album = [self albumWithName:[alertView textFieldAtIndex:0].text];
-     
-        [self.albums addObject:album];
+        [self.albums addObject:[self albumWithName:[alertView textFieldAtIndex:0].text]];
+        
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.albums count]-1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     }
     
 }
@@ -74,8 +111,7 @@
 
 -(Album *)albumWithName:(NSString*)name
 {
-    id delegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext * context = [delegate managedObjectContext];
+    NSManagedObjectContext * context = [CoreDataHelper managedObjectContext];
     
     Album* album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
     
@@ -110,10 +146,19 @@
     
     cell.backgroundColor = [UIColor clearColor];
     
+    Album *a = self.albums[indexPath.row];
+    cell.textLabel.text = a.name;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.font = [UIFont fontWithName:@"GillSans-Light" size:24];
+    cell.textLabel.numberOfLines = 0;
     return cell;
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
