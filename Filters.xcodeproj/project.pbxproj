@@ -104,12 +104,8 @@
 				1F525A241A2FD294006212B0 /* AppDelegate.h */,
 				1F525A251A2FD294006212B0 /* AppDelegate.m */,
 				1F525A2D1A2FD294006212B0 /* Main.storyboard */,
-				1F525A561A300201006212B0 /* PhotosCollectionViewController.h */,
-				1F525A571A300201006212B0 /* PhotosCollectionViewController.m */,
-				1F525A591A3002CF006212B0 /* PhotoCollectionViewCell.h */,
-				1F525A5A1A3002CF006212B0 /* PhotoCollectionViewCell.m */,
-				1F525A491A2FD2D3006212B0 /* AlbumTableViewController.h */,
-				1F525A4A1A2FD2D3006212B0 /* AlbumTableViewController.m */,
+				1F525A601A3006C1006212B0 /* AlbumTableViewController */,
+				1F525A5F1A3006AF006212B0 /* PhotosCollectionViewController */,
 				1F525A551A2FFC95006212B0 /* Core Data Delegate */,
 				1F525A4F1A2FDA70006212B0 /* Album - NSManagedObject */,
 				1F525A301A2FD294006212B0 /* Images.xcassets */,
@@ -163,6 +159,34 @@
 				1F525A511A2FF7CF006212B0 /* CoreDataHelper.m */,
 			);
 			name = "Core Data Delegate";
+			sourceTree = "<group>";
+		};
+		1F525A5E1A3006A2006212B0 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1F525A591A3002CF006212B0 /* PhotoCollectionViewCell.h */,
+				1F525A5A1A3002CF006212B0 /* PhotoCollectionViewCell.m */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1F525A5F1A3006AF006212B0 /* PhotosCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F525A561A300201006212B0 /* PhotosCollectionViewController.h */,
+				1F525A571A300201006212B0 /* PhotosCollectionViewController.m */,
+				1F525A5E1A3006A2006212B0 /* CollectionViewCell */,
+			);
+			name = PhotosCollectionViewController;
+			sourceTree = "<group>";
+		};
+		1F525A601A3006C1006212B0 /* AlbumTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F525A491A2FD2D3006212B0 /* AlbumTableViewController.h */,
+				1F525A4A1A2FD2D3006212B0 /* AlbumTableViewController.m */,
+			);
+			name = AlbumTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
