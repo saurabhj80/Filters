@@ -22,6 +22,7 @@
 		1F525A631A303B36006212B0 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A621A303B36006212B0 /* Photo.m */; };
 		1F525A661A303B95006212B0 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A651A303B95006212B0 /* Album.m */; };
 		1F525A691A303CEE006212B0 /* PhotoDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */; };
+		1F525A6D1A304D63006212B0 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		1F525A651A303B95006212B0 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Album.m; path = ../Album.m; sourceTree = "<group>"; };
 		1F525A671A303CEE006212B0 /* PhotoDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoDataTransformer.h; path = ../PhotoDataTransformer.h; sourceTree = "<group>"; };
 		1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoDataTransformer.m; path = ../PhotoDataTransformer.m; sourceTree = "<group>"; };
+		1F525A6B1A304D63006212B0 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				1F525A241A2FD294006212B0 /* AppDelegate.h */,
 				1F525A251A2FD294006212B0 /* AppDelegate.m */,
 				1F525A2D1A2FD294006212B0 /* Main.storyboard */,
+				1F525A6B1A304D63006212B0 /* PhotoDetailViewController.h */,
+				1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */,
 				1F525A601A3006C1006212B0 /* AlbumTableViewController */,
 				1F525A5F1A3006AF006212B0 /* PhotosCollectionViewController */,
 				1F525A4F1A2FDA70006212B0 /* Core Data */,
@@ -305,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F525A521A2FF7CF006212B0 /* CoreDataHelper.m in Sources */,
+				1F525A6D1A304D63006212B0 /* PhotoDetailViewController.m in Sources */,
 				1F525A261A2FD294006212B0 /* AppDelegate.m in Sources */,
 				1F525A4B1A2FD2D3006212B0 /* AlbumTableViewController.m in Sources */,
 				1F525A631A303B36006212B0 /* Photo.m in Sources */,

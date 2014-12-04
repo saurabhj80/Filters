@@ -36,13 +36,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="egA-rx-gcg" kind="show" identifier="useless" id="NCy-qt-hO5"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGw-kr-Cda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.5" y="381.5"/>
+            <point key="canvasLocation" x="321.5" y="387.5"/>
         </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="eTB-wV-Icg">
@@ -66,6 +63,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="Mpe-DP-Foq" kind="show" identifier="detailViewControllerSegue" id="Yi7-pu-Ik1"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -85,7 +85,53 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ap-JI-sCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276.5" y="381.5"/>
+            <point key="canvasLocation" x="765.5" y="387.5"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="TQE-DD-EvD">
+            <objects>
+                <viewController id="Mpe-DP-Foq" customClass="PhotoDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="653-zb-kgp"/>
+                        <viewControllerLayoutGuide type="bottom" id="yWB-0h-7k9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DxJ-YN-LC1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXa-uj-IH4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="595"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-7d-up9">
+                                <rect key="frame" x="315" y="617" width="44" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deletePressed:" destination="Mpe-DP-Foq" eventType="touchUpInside" id="XpO-Ue-IMu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbF-yn-GVz">
+                                <rect key="frame" x="16" y="617" width="67" height="30"/>
+                                <state key="normal" title="Add Filter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFilterButtonPressed:" destination="Mpe-DP-Foq" eventType="touchUpInside" id="0fx-lA-DGq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="dXa-uj-IH4" id="nN5-j7-Ue2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSn-IB-ucw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.5" y="387.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OGE-kl-eKL">
@@ -104,27 +150,5 @@
             </objects>
             <point key="canvasLocation" x="-149.5" y="381.5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="62g-lp-ZhD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="egA-rx-gcg" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S28-4i-1mE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="A6n-v9-sTy" kind="relationship" relationship="rootViewController" id="dJy-CU-riH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uf6-hQ-wUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="779.5" y="355.5"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="dJy-CU-riH"/>
-    </inferredMetricsTieBreakers>
 </document>

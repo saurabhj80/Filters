@@ -9,6 +9,7 @@
 #import "PhotosCollectionViewController.h"
 #import "Photo.h"
 #import "CoreDataHelper.h"
+#import "PhotoDetailViewController.h"
 
 @interface PhotosCollectionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -36,13 +37,7 @@ static NSString * const reuseIdentifier = @"photocell";
     [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    
-    NSSet* unsortedphotos = self.album.photos;
-    NSSortDescriptor* sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
-    
-    NSArray* array = [unsortedphotos sortedArrayUsingDescriptors:@[sort]];
-    
-    self.photos = [array mutableCopy];
+   
     
     
 }
@@ -52,15 +47,39 @@ static NSString * const reuseIdentifier = @"photocell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSSet* unsortedphotos = self.album.photos;
+    NSSortDescriptor* sort = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
+    
+    NSArray* array = [unsortedphotos sortedArrayUsingDescriptors:@[sort]];
+    
+    self.photos = [array mutableCopy];
+    
+    [self.collectionView reloadData];
+    
+}
+
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+
+     if ([segue.destinationViewController isKindOfClass:[PhotoDetailViewController class]]) {
+         
+         PhotoDetailViewController* vc = segue.destinationViewController;
+         
+         NSIndexPath* path = [[self.collectionView indexPathsForSelectedItems] lastObject];
+         
+         vc.photo = self.photos[path.row];
+         
+     }
+     
  }
- */
+
 
 #pragma mark - Camera
 
@@ -117,7 +136,7 @@ static NSString * const reuseIdentifier = @"photocell";
     photo.date = [NSDate date];
     photo.albumBook = self.album;
     
-    NSLog(@"%@", photo);
+    //NSLog(@"%@", photo);
     
     NSError *error = nil;
     
@@ -165,12 +184,18 @@ static NSString * const reuseIdentifier = @"photocell";
  }
  */
 
-/*
+
  // Uncomment this method to specify if the specified item should be selected
  - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
  return YES;
  }
- */
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //NSLog(@"Selected");
+    [self performSegueWithIdentifier:@"detailViewControllerSegue" sender:self];
+    
+}
 
 /*
  // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
