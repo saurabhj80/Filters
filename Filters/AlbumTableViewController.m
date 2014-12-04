@@ -36,7 +36,7 @@
     
     [label sizeToFit];
 
-    
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.2 green:0.3 blue:0.5 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,6 +97,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
