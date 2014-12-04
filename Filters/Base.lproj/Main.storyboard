@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="A6n-v9-sTy" kind="show" id="XHr-bI-IcC"/>
+                                    <segue destination="A6n-v9-sTy" kind="show" identifier="albumChosen" id="ZpY-2g-59M"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -36,6 +36,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="egA-rx-gcg" kind="show" identifier="useless" id="NCy-qt-hO5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGw-kr-Cda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,10 +73,19 @@
                             <outlet property="delegate" destination="A6n-v9-sTy" id="TAA-ze-0Fz"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="FN9-Sf-RGL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="myZ-WN-bMX">
+                            <connections>
+                                <action selector="cameraButtonPresses:" destination="A6n-v9-sTy" id="fRz-Sm-vi4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ap-JI-sCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734.5" y="386.5"/>
+            <point key="canvasLocation" x="1276.5" y="381.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OGE-kl-eKL">
@@ -92,5 +104,27 @@
             </objects>
             <point key="canvasLocation" x="-149.5" y="381.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="62g-lp-ZhD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="egA-rx-gcg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S28-4i-1mE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A6n-v9-sTy" kind="relationship" relationship="rootViewController" id="dJy-CU-riH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uf6-hQ-wUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779.5" y="355.5"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dJy-CU-riH"/>
+    </inferredMetricsTieBreakers>
 </document>

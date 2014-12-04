@@ -15,12 +15,13 @@
 		1F525A341A2FD294006212B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F525A321A2FD294006212B0 /* LaunchScreen.xib */; };
 		1F525A401A2FD294006212B0 /* FiltersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A3F1A2FD294006212B0 /* FiltersTests.m */; };
 		1F525A4B1A2FD2D3006212B0 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A4A1A2FD2D3006212B0 /* AlbumTableViewController.m */; };
-		1F525A4E1A2FD869006212B0 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A4D1A2FD869006212B0 /* Album.m */; };
 		1F525A521A2FF7CF006212B0 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A511A2FF7CF006212B0 /* CoreDataHelper.m */; };
 		1F525A541A2FF8BD006212B0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F525A531A2FF8BD006212B0 /* CoreData.framework */; };
 		1F525A581A300201006212B0 /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A571A300201006212B0 /* PhotosCollectionViewController.m */; };
 		1F525A5B1A3002CF006212B0 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A5A1A3002CF006212B0 /* PhotoCollectionViewCell.m */; };
-		1F525A5D1A3003E3006212B0 /* fsm.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F525A5C1A3003E3006212B0 /* fsm.png */; };
+		1F525A631A303B36006212B0 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A621A303B36006212B0 /* Photo.m */; };
+		1F525A661A303B95006212B0 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A651A303B95006212B0 /* Album.m */; };
+		1F525A691A303CEE006212B0 /* PhotoDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +49,6 @@
 		1F525A3F1A2FD294006212B0 /* FiltersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FiltersTests.m; sourceTree = "<group>"; };
 		1F525A491A2FD2D3006212B0 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
 		1F525A4A1A2FD2D3006212B0 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
-		1F525A4C1A2FD869006212B0 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
-		1F525A4D1A2FD869006212B0 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		1F525A501A2FF7CF006212B0 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		1F525A511A2FF7CF006212B0 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		1F525A531A2FF8BD006212B0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -57,7 +56,12 @@
 		1F525A571A300201006212B0 /* PhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewController.m; sourceTree = "<group>"; };
 		1F525A591A3002CF006212B0 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		1F525A5A1A3002CF006212B0 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
-		1F525A5C1A3003E3006212B0 /* fsm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fsm.png; sourceTree = "<group>"; };
+		1F525A611A303B36006212B0 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		1F525A621A303B36006212B0 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		1F525A641A303B95006212B0 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Album.h; path = ../Album.h; sourceTree = "<group>"; };
+		1F525A651A303B95006212B0 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Album.m; path = ../Album.m; sourceTree = "<group>"; };
+		1F525A671A303CEE006212B0 /* PhotoDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoDataTransformer.h; path = ../PhotoDataTransformer.h; sourceTree = "<group>"; };
+		1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoDataTransformer.m; path = ../PhotoDataTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +110,8 @@
 				1F525A2D1A2FD294006212B0 /* Main.storyboard */,
 				1F525A601A3006C1006212B0 /* AlbumTableViewController */,
 				1F525A5F1A3006AF006212B0 /* PhotosCollectionViewController */,
-				1F525A551A2FFC95006212B0 /* Core Data Delegate */,
-				1F525A4F1A2FDA70006212B0 /* Album - NSManagedObject */,
+				1F525A4F1A2FDA70006212B0 /* Core Data */,
 				1F525A301A2FD294006212B0 /* Images.xcassets */,
-				1F525A5C1A3003E3006212B0 /* fsm.png */,
-				1F525A271A2FD294006212B0 /* Filters.xcdatamodeld */,
 				1F525A321A2FD294006212B0 /* LaunchScreen.xib */,
 				1F525A201A2FD294006212B0 /* Supporting Files */,
 			);
@@ -143,13 +144,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1F525A4F1A2FDA70006212B0 /* Album - NSManagedObject */ = {
+		1F525A4F1A2FDA70006212B0 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				1F525A4C1A2FD869006212B0 /* Album.h */,
-				1F525A4D1A2FD869006212B0 /* Album.m */,
+				1F525A641A303B95006212B0 /* Album.h */,
+				1F525A651A303B95006212B0 /* Album.m */,
+				1F525A611A303B36006212B0 /* Photo.h */,
+				1F525A621A303B36006212B0 /* Photo.m */,
+				1F525A271A2FD294006212B0 /* Filters.xcdatamodeld */,
+				1F525A6A1A303D59006212B0 /* PhotoDataTransformer */,
+				1F525A551A2FFC95006212B0 /* Core Data Delegate */,
 			);
-			name = "Album - NSManagedObject";
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		1F525A551A2FFC95006212B0 /* Core Data Delegate */ = {
@@ -187,6 +193,15 @@
 				1F525A4A1A2FD2D3006212B0 /* AlbumTableViewController.m */,
 			);
 			name = AlbumTableViewController;
+			sourceTree = "<group>";
+		};
+		1F525A6A1A303D59006212B0 /* PhotoDataTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				1F525A671A303CEE006212B0 /* PhotoDataTransformer.h */,
+				1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */,
+			);
+			name = PhotoDataTransformer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F525A2F1A2FD294006212B0 /* Main.storyboard in Resources */,
-				1F525A5D1A3003E3006212B0 /* fsm.png in Resources */,
 				1F525A341A2FD294006212B0 /* LaunchScreen.xib in Resources */,
 				1F525A311A2FD294006212B0 /* Images.xcassets in Resources */,
 			);
@@ -293,10 +307,12 @@
 				1F525A521A2FF7CF006212B0 /* CoreDataHelper.m in Sources */,
 				1F525A261A2FD294006212B0 /* AppDelegate.m in Sources */,
 				1F525A4B1A2FD2D3006212B0 /* AlbumTableViewController.m in Sources */,
+				1F525A631A303B36006212B0 /* Photo.m in Sources */,
 				1F525A581A300201006212B0 /* PhotosCollectionViewController.m in Sources */,
 				1F525A291A2FD294006212B0 /* Filters.xcdatamodeld in Sources */,
+				1F525A661A303B95006212B0 /* Album.m in Sources */,
 				1F525A5B1A3002CF006212B0 /* PhotoCollectionViewCell.m in Sources */,
-				1F525A4E1A2FD869006212B0 /* Album.m in Sources */,
+				1F525A691A303CEE006212B0 /* PhotoDataTransformer.m in Sources */,
 				1F525A231A2FD294006212B0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

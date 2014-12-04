@@ -1,5 +1,5 @@
 //
-//  Album.h
+//  Photo.h
 //  Filters
 //
 //  Created by Saurabh Jain on 12/3/14.
@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Album;
 
-@interface Album : NSManagedObject
+@interface Photo : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) id image;
 @property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) Album *albumBook;
 
 @end

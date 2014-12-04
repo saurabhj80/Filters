@@ -8,6 +8,7 @@
 
 #import "AlbumTableViewController.h"
 #import "CoreDataHelper.h"
+#import "PhotosCollectionViewController.h"
 
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
@@ -46,7 +47,7 @@
     label.text = @"Albums";
     
     [label sizeToFit];
-
+    
     self.tableView.backgroundColor = [UIColor colorWithRed:0.2 green:0.25 blue:0.35 alpha:1];
 }
 
@@ -59,11 +60,11 @@
     [super viewWillAppear:animated];
     
     NSManagedObjectContext* context = [CoreDataHelper managedObjectContext];
-     
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Album" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
-
+    
     // Specify how the fetched objects should be sorted
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
@@ -83,7 +84,7 @@
 #pragma mark - Alert
 
 - (IBAction)addAlbumBarButtonItemPressed:(UIBarButtonItem *)sender {
-
+    
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Add a new Album" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
     [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
@@ -144,13 +145,14 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor clearColor];
-    
     Album *a = self.albums[indexPath.row];
     cell.textLabel.text = a.name;
+    
+    cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.font = [UIFont fontWithName:@"GillSans-Light" size:24];
     cell.textLabel.numberOfLines = 0;
+    
     return cell;
 }
 
@@ -160,47 +162,60 @@
     return self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"albumChosen"]){
+        
+        if ([segue.destinationViewController isKindOfClass:[PhotosCollectionViewController class]]) {
+            
+            PhotosCollectionViewController* vc = segue.destinationViewController;
+            
+            NSIndexPath * path = [self.tableView indexPathForSelectedRow];
+            
+            vc.album = self.albums[path.row];
+            
+            //NSLog(@"album");
+        }
+    }
+    
 }
-*/
+
 
 @end

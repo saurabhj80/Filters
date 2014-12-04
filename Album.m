@@ -7,11 +7,13 @@
 //
 
 #import "Album.h"
+#import "Photo.h"
 
 
 @implementation Album
 
-@dynamic name;
 @dynamic date;
+@dynamic name;
+@dynamic photos;
 
 @end
