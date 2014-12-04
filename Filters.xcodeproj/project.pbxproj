@@ -111,13 +111,10 @@
 				1F525A241A2FD294006212B0 /* AppDelegate.h */,
 				1F525A251A2FD294006212B0 /* AppDelegate.m */,
 				1F525A2D1A2FD294006212B0 /* Main.storyboard */,
-				1F525A6B1A304D63006212B0 /* PhotoDetailViewController.h */,
-				1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */,
 				1F525A601A3006C1006212B0 /* AlbumTableViewController */,
 				1F525A5F1A3006AF006212B0 /* PhotosCollectionViewController */,
+				1F525A6E1A3054D6006212B0 /* PhotoDetailViewController */,
 				1F525A4F1A2FDA70006212B0 /* Core Data */,
-				1F525A301A2FD294006212B0 /* Images.xcassets */,
-				1F525A321A2FD294006212B0 /* LaunchScreen.xib */,
 				1F525A201A2FD294006212B0 /* Supporting Files */,
 			);
 			path = Filters;
@@ -126,8 +123,10 @@
 		1F525A201A2FD294006212B0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F525A301A2FD294006212B0 /* Images.xcassets */,
 				1F525A211A2FD294006212B0 /* Info.plist */,
 				1F525A221A2FD294006212B0 /* main.m */,
+				1F525A321A2FD294006212B0 /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -207,6 +206,15 @@
 				1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */,
 			);
 			name = PhotoDataTransformer;
+			sourceTree = "<group>";
+		};
+		1F525A6E1A3054D6006212B0 /* PhotoDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F525A6B1A304D63006212B0 /* PhotoDetailViewController.h */,
+				1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */,
+			);
+			name = PhotoDetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
