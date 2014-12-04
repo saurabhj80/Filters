@@ -36,7 +36,7 @@
     
     [label sizeToFit];
 
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.2 green:0.3 blue:0.5 alpha:1];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.2 green:0.25 blue:0.35 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
