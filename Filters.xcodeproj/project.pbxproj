@@ -23,6 +23,8 @@
 		1F525A661A303B95006212B0 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A651A303B95006212B0 /* Album.m */; };
 		1F525A691A303CEE006212B0 /* PhotoDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */; };
 		1F525A6D1A304D63006212B0 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */; };
+		1FF22A791A3104D600D13330 /* FiltersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF22A781A3104D600D13330 /* FiltersCollectionViewController.m */; };
+		1FF22A7C1A31195F00D13330 /* filmschoolappscover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FF22A7B1A31195F00D13330 /* filmschoolappscover.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		1F525A681A303CEE006212B0 /* PhotoDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoDataTransformer.m; path = ../PhotoDataTransformer.m; sourceTree = "<group>"; };
 		1F525A6B1A304D63006212B0 /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
+		1FF22A771A3104D600D13330 /* FiltersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersCollectionViewController.h; sourceTree = "<group>"; };
+		1FF22A781A3104D600D13330 /* FiltersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersCollectionViewController.m; sourceTree = "<group>"; };
+		1FF22A7B1A31195F00D13330 /* filmschoolappscover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filmschoolappscover.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +96,6 @@
 			children = (
 				1F525A531A2FF8BD006212B0 /* CoreData.framework */,
 				1F525A1F1A2FD294006212B0 /* Filters */,
-				1F525A3C1A2FD294006212B0 /* FiltersTests */,
-				1F525A1E1A2FD294006212B0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +106,7 @@
 				1F525A391A2FD294006212B0 /* FiltersTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1F525A1F1A2FD294006212B0 /* Filters */ = {
@@ -111,6 +115,7 @@
 				1F525A241A2FD294006212B0 /* AppDelegate.h */,
 				1F525A251A2FD294006212B0 /* AppDelegate.m */,
 				1F525A2D1A2FD294006212B0 /* Main.storyboard */,
+				1FF22A7A1A31063400D13330 /* FilterCollectionViewController */,
 				1F525A601A3006C1006212B0 /* AlbumTableViewController */,
 				1F525A5F1A3006AF006212B0 /* PhotosCollectionViewController */,
 				1F525A6E1A3054D6006212B0 /* PhotoDetailViewController */,
@@ -123,6 +128,8 @@
 		1F525A201A2FD294006212B0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FF22A7B1A31195F00D13330 /* filmschoolappscover.jpg */,
+				1F525A3D1A2FD294006212B0 /* Supporting Files */,
 				1F525A301A2FD294006212B0 /* Images.xcassets */,
 				1F525A211A2FD294006212B0 /* Info.plist */,
 				1F525A221A2FD294006212B0 /* main.m */,
@@ -135,18 +142,20 @@
 			isa = PBXGroup;
 			children = (
 				1F525A3F1A2FD294006212B0 /* FiltersTests.m */,
-				1F525A3D1A2FD294006212B0 /* Supporting Files */,
 			);
 			path = FiltersTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		1F525A3D1A2FD294006212B0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F525A1E1A2FD294006212B0 /* Products */,
 				1F525A3E1A2FD294006212B0 /* Info.plist */,
+				1F525A3C1A2FD294006212B0 /* FiltersTests */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
+			path = FiltersTests;
+			sourceTree = SOURCE_ROOT;
 		};
 		1F525A4F1A2FDA70006212B0 /* Core Data */ = {
 			isa = PBXGroup;
@@ -215,6 +224,15 @@
 				1F525A6C1A304D63006212B0 /* PhotoDetailViewController.m */,
 			);
 			name = PhotoDetailViewController;
+			sourceTree = "<group>";
+		};
+		1FF22A7A1A31063400D13330 /* FilterCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1FF22A771A3104D600D13330 /* FiltersCollectionViewController.h */,
+				1FF22A781A3104D600D13330 /* FiltersCollectionViewController.m */,
+			);
+			name = FilterCollectionViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F525A2F1A2FD294006212B0 /* Main.storyboard in Resources */,
+				1FF22A7C1A31195F00D13330 /* filmschoolappscover.jpg in Resources */,
 				1F525A341A2FD294006212B0 /* LaunchScreen.xib in Resources */,
 				1F525A311A2FD294006212B0 /* Images.xcassets in Resources */,
 			);
@@ -321,6 +340,7 @@
 				1F525A6D1A304D63006212B0 /* PhotoDetailViewController.m in Sources */,
 				1F525A261A2FD294006212B0 /* AppDelegate.m in Sources */,
 				1F525A4B1A2FD2D3006212B0 /* AlbumTableViewController.m in Sources */,
+				1FF22A791A3104D600D13330 /* FiltersCollectionViewController.m in Sources */,
 				1F525A631A303B36006212B0 /* Photo.m in Sources */,
 				1F525A581A300201006212B0 /* PhotosCollectionViewController.m in Sources */,
 				1F525A291A2FD294006212B0 /* Filters.xcdatamodeld in Sources */,
