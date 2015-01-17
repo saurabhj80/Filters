@@ -128,12 +128,13 @@ static NSString * const reuseIdentifier = @"filter cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     
     cell.backgroundColor = [UIColor whiteColor];
     
-    dispatch_queue_t FilterQueue = dispatch_queue_create("filter queue", NULL);
+    dispatch_queue_t FilterQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
     
     dispatch_async(FilterQueue, ^{
         
@@ -145,7 +146,7 @@ static NSString * const reuseIdentifier = @"filter cell";
         });
         
     });
-    
+
     
     return cell;
 }
